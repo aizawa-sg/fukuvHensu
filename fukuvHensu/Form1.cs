@@ -14,6 +14,7 @@ namespace fukuvHensu
     {
         int vx = 0;
         int vy = 0;
+        
  
         public Form1()
         {
@@ -53,6 +54,12 @@ namespace fukuvHensu
         {
             vx = 0;
             vy = 10;
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            vx = 0;
+            vy = 0;
         }
     }
 }
