@@ -12,8 +12,8 @@ namespace fukuvHensu
 {
     public partial class Form1 : Form
     {
-        int vx = 0;
-        int vy = 0;
+        int vx =-30;
+        int vy =-10;
         
  
         public Form1()
@@ -36,6 +36,27 @@ namespace fukuvHensu
         {
             label1.Left += vx;
             label1.Top += vy;
+            if(label1.Left<0)
+            {
+                vx = Math.Abs(vx);
+         
+            }
+            if(label1.Top<0)
+            {
+                vy = Math.Abs(vy);
+            }
+            if(label1.Left<0)
+            {
+                vy = -Math.Abs(vy);
+            }
+            if(label1.Right> ClientSize.Width)
+            {
+                vx =-Math.Abs(vx);
+            }
+            if(label1.Bottom>ClientSize.Height)
+            {
+                vy = -Math.Abs(vy);
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -60,6 +81,12 @@ namespace fukuvHensu
         {
             vx = 0;
             vy = 0;
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+           // MessageBox.Show("" + ClientSize.Width);
+           // MessageBox.Show("" + ClientSize.Height);
         }
     }
 }
